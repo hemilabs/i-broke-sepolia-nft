@@ -8,7 +8,7 @@
     "start": "node batchMint.js"
   },
   "author": "Thomas Alvarenga <thomas@hemi.xyz>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "csv-parse": "^5.6.0",
     "hemi-viem": "^2.0.0-alpha.16",
