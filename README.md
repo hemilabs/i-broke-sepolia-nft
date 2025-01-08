@@ -17,18 +17,10 @@ This repository groups all files needed to deploy and mint the "I Broke Sepolia"
 
 ### Installation
 
-1. Install the dependencies:
+Install the dependencies:
 
 ```bash
 npm install
-```
-
-### Running the Script
-
-1. On the root folder, run the following command to start the script that mints one NFT for each address on the CSV file:
-
-```bash
-npm start
 ```
 
 ### Environment Variables
@@ -45,6 +37,14 @@ Example of the .env file
 TESTNET=
 NFT_CONTRACT_ADDRESS=
 MNEMONIC_ACCOUNT=
+```
+
+### Running the Script
+
+On the root folder, run the following command to start the script that mints one NFT for each address on the CSV file:
+
+```bash
+npm start
 ```
 
 ## Contribution
