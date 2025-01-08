@@ -3,17 +3,12 @@ pragma solidity ^0.8.20;
 
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 
 contract IBrokeSepoliaNFT is ERC721Enumerable, Ownable {
-    using SafeMath for uint256;
     using Counters for Counters.Counter;
 
     Counters.Counter private _tokenIds;
-    // The mint price for the collection
-    uint public constant PRICE = 0 ether;
-
     string public baseTokenURI;
     
     constructor(string memory baseURI, string memory name, string memory symbol) ERC721(name, symbol) Ownable(msg.sender) {
@@ -60,4 +55,5 @@ contract IBrokeSepoliaNFT is ERC721Enumerable, Ownable {
         require(success, "Transfer failed.");
     }
 }
+
 
