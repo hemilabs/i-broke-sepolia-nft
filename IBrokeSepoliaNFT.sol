@@ -29,7 +29,7 @@ contract IBrokeSepoliaNFT is ERC721Enumerable, Ownable {
         return _baseURI();
     }
 
-    function mintNFT(address _owner) public payable onlyOwner {
+    function mintNFT(address _owner) public onlyOwner {
         uint newTokenID = _tokenIds.current();
         _safeMint(_owner, newTokenID);
         _tokenIds.increment();
@@ -44,15 +44,6 @@ contract IBrokeSepoliaNFT is ERC721Enumerable, Ownable {
             tokensId[i] = tokenOfOwnerByIndex(_owner, i);
         }
         return tokensId;
-    }
-    
-    // Withdraw the ether in the contract
-    function withdraw() public payable onlyOwner {
-        uint balance = address(this).balance;
-        require(balance > 0, "No ether left to withdraw");
-
-        (bool success, ) = (msg.sender).call{value: balance}("");
-        require(success, "Transfer failed.");
     }
 }
 
